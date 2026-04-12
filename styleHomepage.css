@@ -1,0 +1,157 @@
+/*
+Will update this section with Website Main Colors:
+-#F5E6E8 <-- Light pink color
+-#694A43D <--Light brown Color
+-#2E1F1E <-- Darker Brown
+-ACD77E <--Light green
+-#D9AFAF <-- Darker pink color
+-White
+-Black
+*/
+
+/* Using the same font as the login page*/
+* {
+    overflow-x: hidden; /*This stops all the boxes from going over the page*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /*fancy-like font*/
+}
+
+
+body {
+    margin: 0;
+    color: white; /*Making the text color white so that it can pop out*/
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: #2E1F1E; /*Contrast Ratio:10.13:1 with #F5E6E8 */
+    background-size: cover; /*makes sure that it wont be small and on the side!*/
+    background-position: center;
+}
+
+/*Main section user will see in the homepage*/
+.section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    padding: 80px 40px 40px;
+    width: 100%
+}
+
+.content {
+    text-align: center;
+    max-width: 800px;
+    background: #D9AFAF; /*Contrast Ratio: 10.13:1 with #472F2E*/
+    backdrop-filter: blur(15px);
+    padding: 50px 45px;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px white;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 100%;
+    max-width: 800px;
+
+}
+
+.title {
+    font-size: 50px;
+    color: #2E1F1E; /*Dark brown to contrast*/
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.subtitle {
+    font-size: 26px;
+    color: #2E1F1E;
+    margin-bottom: 20px;
+    font-weight: 600px;
+}
+
+.description {
+    font-size: 17px;
+    color: #2E1F1E;
+    line-height: 1.6; /*Higher vertical spacing*/
+    margin-bottom: 30px;
+}
+
+/*The buttons on the bottom*/
+
+.buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-decoration: none;
+}
+
+/*Features the two buttons share together*/
+.getStarted, .learnMore {
+    color: white;
+    background: #273B12; /*green*/
+    padding: 14px 38px;
+    font-size: 16px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease; /*Ease into the short duration*/
+    text-decoration: none;
+}
+
+/*When hovering on the both of them, the two buttons will change*/
+
+.getStarted:hover, .learnMore:hover {
+    color: white;
+    background: black;
+    cursor:pointer;
+}
+
+/*FEATURES SECTION*/
+/*Grid sourced from: https://www.w3schools.com/css/css_grid.asp*/
+
+/*Might add individual buttons that say go to so that I don't have to include a navbar on my homepage.*/
+
+.featuresSection {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 45px;
+    padding: 50px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/*All of the individual Feature Cards*/
+
+#StudyTools, #StudyCalendar, #stopwatch, #timer, #studyStats, #Profile{
+    background: #D9AFAF;
+    color:#2E1F1E;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    padding: 35px 28px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px white; /*white glowy shadow*/
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+.goStudyTools, .goCalendar, .goStopWatch, .goTimer, .goStudyStats, .goProfile{
+    margin-top: 15px;
+    color: white;
+    background: #273B12; /*green*/
+    text-decoration: none;
+}
+
+/* Will add some sort of hover feature that will make them either go up, or go down?*/
+
+#StudyTools:hover, #StudyCalendar:hover, #stopwatch:hover, #timer:hover, #studyStats:hover,#Profile:hover {
+    transform:translateY(5px);
+    box-shadow: 0 10px 35px white; /*white glowy shadow glows stronger*/
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease; /*Ease into the short duration*/
+}
