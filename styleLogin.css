@@ -22,16 +22,14 @@ body{
 
 #WelcomingMessage{
     position: absolute;
-    right: 60px;
+    right: -50px;
     top: 50%;
     transform: translateY(-50%);
     color: white;
     text-align: right;
-}
-
-#WelcomingMessage{
     font-size: 35px;
 }
+
 
 .wrapper{
     width: 420px;

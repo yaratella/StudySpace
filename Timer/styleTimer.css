@@ -1,0 +1,133 @@
+/*
+Will update this section with Website Main Colors:
+-#F5E6E8 <-- Light pink color
+-#694A43 <--Light brown Color
+-#2E1F1E <-- Darker Brown
+-ACD77E <--Light green
+-#D9AFAF <-- Darker pink color
+-White
+-Black
+*/
+
+/* Using the same font as the login page*/
+* {
+    overflow-x: hidden; /*This stops all the boxes from going over the page*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /*fancy-like font*/
+}
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+    background: url('timer.png') no-repeat;/*Imported an image as a background*/
+    background-size: cover; /*makes sure that it wont be small and on the side!*/
+    background-position: center;
+    display: flex;
+    justify-content: center; /*horizontal center*/
+    flex-direction: column;
+    align-items: center; /*vertical center*/
+}
+
+.body{
+    width: 720px;
+    height: 450px;
+   /*background: #694A43;*/
+    background: transparent;
+    border: 1px solid #694A43; /*Makes a small border that blends smoothly with the background*/
+    backdrop-filter: blur(20px); /*Makes the background that it's behind a bit blurrier*/
+    box-shadow: 0 0 10px rgba(0, 0, 0,  0.2);
+    color: white;
+    /*Making the login a little more squished, not spaced out*/
+    border-radius: 10px;
+    padding: 50px 50px;
+}
+
+#WelcomingMessage {
+    text-align: center;
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+}
+
+#btn3hr, #btn2hr, #btn1hr, #btn30min, #btn25min, #btn15min {
+    justify-content: center;
+    font-size: 1.5rem;
+    padding: 20px;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+#container {
+    text-align: center;
+    font-weight: bold;
+    color: #694A43;
+    background: white;
+    border-radius: 50px;
+    margin-top: 100px;
+    font-size: 2rem;;
+    padding: 10px;
+    text-shadow: 2px 2px 2px #AF8A83; /* Will make it look like it's popping out */
+    margin-bottom: 30px;
+}
+
+#controls button {
+    margin-top: 30px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin: 5px;
+    min-width: 125px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: white;
+    transition: background-color 0.5s ease;
+}
+
+#startBtn{
+    background-color:#ACD77E; 
+}
+
+#stopBtn{
+    background-color:#D9AFAF;
+}
+
+#resetBtn{
+    background-color: #694A43;
+}
+
+#startBtn:hover{
+    background-color:#507826; 
+}
+
+#stopBtn:hover{
+    background-color: #BA6D6D;
+}
+
+#resetBtn:hover{
+    background-color: #2E1F1E;
+}
+
+/*Styling the back button*/
+
+a {
+    margin-top: 25px;
+    color: #2E1F1E;
+    background: #C17B7B; /*Darker pink buttons*/
+    text-decoration: none;
+    border-radius: 40px;
+    padding: 5px 10px;
+}
+
+a:hover {
+    color: #2E1F1E; /*Color stays the same*/
+    background: #F5E6E8; /*Background changes and becomes lighter*/
+}
+
+#backBTN{
+    margin-top: 25px;
+    color: #2E1F1E; /*Color stays the same*/
+    background: #F5E6E8; /*Background changes and becomes lighter*/
+}

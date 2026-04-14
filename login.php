@@ -2,6 +2,21 @@
 //I'll leave this php side empty, but this will also be paired up with SQL to handle
 //login information
 
+/*
+
+//user input
+$userPassword = $_POST['password']
+
+//securely hash the password
+$hashedPassword = password_hash($userPassword,PASSWORD_DEFAULT);
+
+// Store $hashedPassword in your MySQL database using a prepared
+statement
+
+
+how do we verify the password?: compare the given password and the actual password
+*/
+
 ?>
 
 <!DOCTYPE html>
@@ -19,8 +34,8 @@
     </head>
     <body>
         <div id="WelcomingMessage">
-            <h1>Welcome to StudySpace</h1>
-            <h2>Let's get Work Done</h2>
+            <h2>Welcome Back to StudySpace</h2>
+            <h4>Let's get Some Work Done</h4>
         </div>
         <div class="wrapper">
             <form action="">
@@ -39,13 +54,13 @@
 
                 <div class="remember-forgot">
                     <label><input type="checkbox">Remember me</label>
-                    <a href="#">Forgot password?</a>
+                    <a href="forgotPassword.php">Forgot password?</a>
                 </div>
 
                 <button type="submit" class="btn">Login</button>
 
                 <div class="register-link">
-                    <p>Dont have an account?<a href="#"> Register</a></p>
+                    <p>Dont have an account?<a href="register.php"> Register</a></p>
                 </div>
             </form>
         </div>

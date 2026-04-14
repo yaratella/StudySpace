@@ -1,0 +1,103 @@
+
+/** means everything*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /*fancy-like font*/
+}
+
+body{
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url('images/imga.png') no-repeat;/*Imported an image as a background*/
+    background-size: cover; /*makes sure that it wont be small and on the side!*/
+    background-position: center;
+    padding-left: 160px; /*Added a bit of spacing, but im keeping the login things to the left*/
+}
+
+#WelcomingMessage{
+    position: absolute;
+    right: 60px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    text-align: right;
+    font-size: 35px;
+}
+
+
+.wrapper{
+    width: 420px;
+    background: transparent;
+    border: 1px solid #694A43; /*Makes a small border that blends smoothly with the background*/
+    backdrop-filter: blur(20px); /*Makes the background that it's behind a bit blurrier*/
+    box-shadow: 0 0 10px rgba(0, 0, 0,  0.2);
+    color: white;
+    /*Making the login a little more squished, not spaced out*/
+    border-radius: 5px;
+    padding: 30px 40px;
+}
+
+.wrapper h1{
+    font-size: 36px;
+    text-align: center;
+}
+
+/*Fixing Username + Password Boxes + their styling*/
+
+.wrapper .input-box{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 30px 0;
+}
+
+/*Rounding out the input!*/
+
+.input-box input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 40px;
+    font-size: 16px;
+    color: white;
+    padding: 20px 45px 20px 20px; /*Adding space for what's being typed*/
+}
+
+/*Changing the color of the icons*/
+
+.input-box input::placeholder{
+    color: white; /*This makes sure "Username and Login" previews are white*/
+}
+
+.input-box i{
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+}
+
+.wrapper .btn{
+    margin-top: 60px;
+    width: 100%;
+    height: 45px;
+    background: white;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, .1);/*Figured out how to give the button a small shadow*/
+    font-size: 16px;
+    color: #333;
+    font-weight: 600;/*Referenced from online w3schools*/
+    
+}
+

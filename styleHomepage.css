@@ -21,15 +21,15 @@ Will update this section with Website Main Colors:
 
 body {
     margin: 0;
-    color: white; /*Making the text color white so that it can pop out*/
     display: flex;
     justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    background: #2E1F1E; /*Contrast Ratio:10.13:1 with #F5E6E8 */
+    background: url('images/homepg.png') no-repeat;/*Imported an image as a background*/
     background-size: cover; /*makes sure that it wont be small and on the side!*/
     background-position: center;
+    padding-left: 160px; /*Added a bit of spacing, but im keeping the login things to the left*/
 }
 
 /*Main section user will see in the homepage*/
@@ -39,20 +39,22 @@ body {
     align-items: center;
     min-height: 500px;
     padding: 80px 40px 40px;
-    width: 100%
+    width: 100%;
+    color: white;
+    background: transparent;
+    border: 1px solid #694A43; /*Makes a small border that blends smoothly with the background*/
+    backdrop-filter: blur(20px); /*Makes the background that it's behind a bit blurrier*/
+    box-shadow: 0 8px 32px white;
 }
+
+/*Need to change section and features section*/
 
 .content {
     text-align: center;
     max-width: 800px;
-    background: #D9AFAF; /*Contrast Ratio: 10.13:1 with #472F2E*/
-    backdrop-filter: blur(15px);
-    padding: 50px 45px;
     border-radius: 20px;
-    box-shadow: 0 8px 32px white;
-    border: 1px solid rgba(255, 255, 255, 0.2);
     width: 100%;
-    max-width: 800px;
+    max-width: 900px;
 
 }
 
@@ -89,8 +91,8 @@ body {
 
 /*Features the two buttons share together*/
 .getStarted, .learnMore {
-    color: white;
-    background: #273B12; /*green*/
+    color: #2E1F1E;
+    background: #C17B7B; /*Darker pink buttons*/
     padding: 14px 38px;
     font-size: 16px;
     border: none;
@@ -104,8 +106,8 @@ body {
 /*When hovering on the both of them, the two buttons will change*/
 
 .getStarted:hover, .learnMore:hover {
-    color: white;
-    background: black;
+    color: #2E1F1E; /* Color Stays dark brown*/
+    background: #F5E6E8; /*Button becomes light pink*/
     cursor:pointer;
 }
 
@@ -126,8 +128,10 @@ body {
 /*All of the individual Feature Cards*/
 
 #StudyTools, #StudyCalendar, #stopwatch, #timer, #studyStats, #Profile{
-    background: #D9AFAF;
-    color:#2E1F1E;
+    background: transparent;
+    border: 1px solid #694A43; /*Makes a small border that blends smoothly with the background*/
+    backdrop-filter: blur(20px); /*Makes the background that it's behind a bit blurrier*/
+    color: white;
     text-align: center;
     backdrop-filter: blur(10px);
     padding: 35px 28px;
@@ -138,10 +142,19 @@ body {
 }
 
 .goStudyTools, .goCalendar, .goStopWatch, .goTimer, .goStudyStats, .goProfile{
-    margin-top: 15px;
-    color: white;
-    background: #273B12; /*green*/
+    margin-top: 25px;
+    color: #2E1F1E;
+    background: #C17B7B; /*Darker pink buttons*/
     text-decoration: none;
+    border-radius: 40px;
+    padding: 5px 10px;
+}
+
+/* Adding features for when you hover over the mini buttons*/
+
+.goStudyTools:hover, .goCalendar:hover, .goStopWatch:hover, .goTimer:hover, .goStudyStats:hover, .goProfile:hover{
+    color: #2E1F1E; /*Color stays the same*/
+    background: #F5E6E8; /*Background changes and becomes lighter*/
 }
 
 /* Will add some sort of hover feature that will make them either go up, or go down?*/
@@ -152,6 +165,5 @@ body {
     border: none;
     border-radius: 40px;
     cursor: pointer;
-    font-weight: 600;
     transition: all 0.3s ease; /*Ease into the short duration*/
 }
