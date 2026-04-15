@@ -15,6 +15,99 @@ Will update this section with Website Main Colors:
     padding: 0;
     box-sizing: border-box;
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /*fancy-like font*/
-    background-color: red;
+    color: white;
 }
 
+body {
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+    background: url('BG.jpg') no-repeat;/*Imported an image as a background*/
+    background-size: cover; /*makes sure that it wont be small and on the side!*/
+    background-position: center;
+    padding-left: 500px; /*Added a bit of spacing, but im keeping the login things to the left*/
+}
+
+/* Sourced from my styling from the login, made it blurry to be consistent across all pages*/
+
+.prof-card{
+    width: 420px;
+    background: transparent;
+    border: 1px solid #694A43;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px #2E1F1E; /*Have a subtle dark brown shadow*/
+    border-radius: 10px;
+    padding: 30px 40px;
+}
+
+.prof-header{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.prof-header i{
+    font-size: 3rem;
+}
+
+.prof-icon {
+    font-size: 80px;
+    color: white;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.prof-header h1{
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.prof-info{
+    margin-bottom: 30px;
+}
+
+.info-item{
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(225, 225, 225, 0.2);
+}
+
+.info-item label {
+    display: block;
+    font-size: 14px;
+    color: rgba(225, 225, 225, 0.7);
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.info-item p{
+    font-size: 16px;
+    color: white;
+}
+
+.prof-actions{
+    display: flex;
+    gap: 10px;
+}
+
+.btn-back, .btn-logout {
+    flex: 1;
+    padding: 12px;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 25px;
+    color: #2E1F1E;
+    background: #C17B7B; /*Darker pink buttons*/
+    text-decoration: none;
+    border-radius: 40px;
+    padding: 5px 10px;
+}
+
+
+.btn-back:hover, .btn-logout:hover {
+    color: #2E1F1E; /*Color stays the same*/
+    background: #F5E6E8; /*Background changes and becomes lighter*/
+}

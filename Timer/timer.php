@@ -27,35 +27,43 @@
         <div class="body">
             <div id="WelcomingMessage">
                 <h1>Timer</h1>
-                <h3>Scroll and  pick out how long you would like to focus</h3>
+                <h3>Pick how long you would like to focus</h3>
             </div>
 
-            <!-- Need to: Command these so that when they are clicked, It navigates to a timer feature (with similar background to the stopwatch feature) -->
+            <!-- Need to: Make a dropdown menu instead! -->
 
 
-            <div id="AllButtons">
-                <a href="choice.php" id="btn3hr">3 Hours</a>
+            <div id="dropdownContainer">
 
-
-                <a href="choice.php" id="btn2hr">2 Hours</a>
-
-        
-                <a href="choice.php" id="btn1hr">1 Hour</a>
-
-
-                <a href="choice.php" id="btn30min">30 Minutes</a>
-
-
-                <a href="choice.php" id="btn25min">25 Minutes</a>
-
-
-                <a href="choice.php" id="btn15min">15 Minutes</a>
+                <select id="timerDropdown" onchange="setTimer()"> 
+                    <!-- Found all of these values in miliseconds to use in my javascript  -->
+                    <option value="">Select Duration</option>
+                    <option value="10800000">3 Hours</option>
+                    <option value="7200000">2 Hours</option>
+                    <option value="3600000">1 Hour</option>
+                    <option value="1800000">30 Minutess</option>
+                    <option value="1500000">25 Minutes</option>
+                    <option value="900000">15 Minutes</option>
+                </select>
             </div>
 
-            <script src="index.js"></script>
-            <a id="backBTN" href="https://cs.colostate.edu:4444/~C836987719/StudySpace/homepage.php" class="goBack">Back</a>
+            <div id="timerDisplay" style="display: none;"> 
+                <!-- Don't want anything to display unless the user actually picks an option  -->
+                <div id="container">
+                    <div id="display">
+                        <p>00:00:00</p>
+                    </div>
+                
 
+                    <!-- Brought from my stopwatch controls  -->
+                    <div id="controls">
+                        <button id="startBtn" onclick="start()">START</button>
+                        <button id="stopBtn" onclick="stop()">STOP</button>
+                    </div>
+            </div>
         </div>
+        <script src="index.js"></script>
+        <a id="backBTN" href="https://cs.colostate.edu:4444/~C836987719/StudySpace/homepage.php" class="goBack">Back</a>
     </body>
 
 </html>

@@ -9,7 +9,6 @@
     </head>
 
     <body>
-        <!--<?php include 'navbar.php'; ?>-->
         <div class="body">
             <h1 id="myH1">Stopwatch</h1>
             <div id="container">
