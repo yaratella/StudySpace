@@ -58,6 +58,15 @@ if(isset($_POST['login'])){
     $stmt->close();
 }
 
+//Before the conn is closed, implement LOGOUT feature
+
+if(isset($_GET['action']) && $_GET['action'] == 'logout'){
+    session_destroy(); //closes the session
+    $_SESSION = [];
+    header("Location: login.php"); //redirects the user back to login.php
+    exit();
+}
+
 $conn->close();
 
 ?>

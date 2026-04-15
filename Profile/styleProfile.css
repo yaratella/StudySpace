@@ -1,0 +1,20 @@
+/*
+Will update this section with Website Main Colors:
+-#F5E6E8 <-- Light pink color
+-#694A43 <--Light brown Color
+-#2E1F1E <-- Darker Brown
+-ACD77E <--Light green
+-#D9AFAF <-- Darker pink color
+-White
+-Black
+*/
+
+/*Grabbed from other stylesheets*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /*fancy-like font*/
+    background-color: red;
+}
+
