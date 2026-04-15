@@ -76,7 +76,7 @@ $firstName = $_SESSION['firstName'];
                 <h3>Study Statistics</h3>
                 <p>View overall analytics of all of your study sessions and track your progress over time.</p>
                 <br>
-                <a  href="StudyStats/studystat.php" class="goStudyStats">Go!</a>
+                <a  href="StudyStats/studystats.php" class="goStudyStats">Go!</a>
             </div>
             <div id="Profile">
                 <i class='bx bxs-user'></i>

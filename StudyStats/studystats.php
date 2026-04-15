@@ -96,5 +96,9 @@ $conn->close();
             </div>
 
             <a id="backBtn" href="../homepage.php" class="goBack">Back</a>
+
+            <!-- This is where all of my javascript will go, putting it in the same file will just be easier for me later on! -->
+            <script>
+            </script>
     </body>
 </html>
