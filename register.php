@@ -1,22 +1,95 @@
 <?php
-//I'll leave this php side empty, but this will also be paired up with SQL to handle
-//This is for user registering and making a password information
+session_start();
+include "connect.php";
+include "password.php";
 
-//Ask TA how to connect a SQL table to the database: Make the following table: StudySpaceUsers
+//Making a new table
 
-//StudySpaceUsers will store the following information (NOT IN ARRAY) User's firstName, User's lastName, User's username, User's password, User's Email, User's phoneNumber
+$sql = "CREATE TABLE IF NOT EXISTS StudySpaceUserAccounts (
+        id INT PRIMARY KEY AUTO_INCREMENT,
+        firstName VARCHAR(256) NOT NULL,
+        lastName VARCHAR(256) NOT NULL,
+        username VARCHAR(256) UNIQUE NOT NULL,
+        email VARCHAR(256) NOT NULL,
+        passwordHash VARCHAR(255) NOT NULL,
+        totalStudyHours INT DEFAULT 0,
+        createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+)";
 
-$firstName = "";
+if(isset($_POST['create'])){
+    //Storing all of the values that the user names in this table
+    $firstName = $_POST['firstName'];
+    $lastName = $_POST['lastName'];
+    $username = $_POST['username'];
+    $plainPassword = $_POST['password'];
+    $email = $_POST['email'];
 
-$lastName = "";
+    //MAKING SURE THE PASSWORD IS VALID
 
-$username = "";
+    $hasError = false; //Default
+    $errorMsg = ""; //Default
 
-$password = "";
+    //What makes it valid: it has a special character, adn at least 10 characters!
+    //password can't have first and last name
 
-$email = "";
+    //Checking for length
+    if(strlen($plainPassword) < 10){
+        $hasError = true;
+        $errorMsg .= "Password must be at least 10 characters. ";
+    }
 
-$phoneNumber = 0000000000; //Storing it as a default number so that when needed to verify user info, it can work out.
+    //Checking for special Characters: #, %, /, ., @, $
+    $requiredChars = ['!','@','#','$','%','.', '/'];
+    $hasOne = false;
+
+    foreach($requiredChars as $char){
+        if(strpos($plainPassword, $char) !== false){ //Searches for any occurance of any character in the array
+            $hasOne = true;
+            break;
+        }
+    }
+
+    if(!$hasOne){
+        $hasError = true;
+        $errorMsg .= "Password must contain a special character: ! @ # $ % % . /";
+    }
+
+    //Password can't contain first or last name
+    if(stripos($plainPassword, $firstName) !== false || stripos($plainPassword, $lastName) !== false){
+        $hasError = true;
+        $errorMsg .= "Password cannot contain your first or last name. ";
+    }
+
+    //After all these checks if there's no errors, then user's plainPassword will be hashed
+
+    if(!$hasError){
+        //Steps to hash
+        $hashedPassword = password_hash($plainPassword, PASSWORD_DEFAULT);
+
+        //Insert all the valid data into the database
+        $stmt = $conn->prepare("INSERT INTO StudySpaceUserAccounts (firstName, lastName, username, email, passwordHash) VALUES (?,?,?,?,?)");
+
+        $stmt->bind_param("sssss", $firstName, $lastName, $username, $email, $hashedPassword);
+
+        if($stmt->execute()){
+            //If everything is working, and they have their info in their account, then user will be brought to login.php
+            header("Location: login.php");
+            exit();
+        }else{
+            //Checking if it already exists
+            if(strpos($stmt->error, "Duplicate entry") !== false){
+                echo "Username already exists";
+            }else{
+                echo "Error: " . $stmt->error;
+            }
+        }
+
+        $stmt->close();
+    }
+
+}
+
+$conn->close();
 
 //Requirements (I will be checking this with IF-Statements)
 
@@ -45,30 +118,30 @@ $phoneNumber = 0000000000; //Storing it as a default number so that when needed 
             <h4>Let's get Get Started</h4>
         </div>
         <div class="wrapper">
-            <form action="">
+            <form method="POST" action="register.php">
                 <h1>Sign Up</h1>
 
                 <!-- First and Last name for Password Requirements + Future Use -->
                 <div class="input-box">
-                    <input type="text" placeholder="First Name" required>
+                    <input type="text" name="firstName" placeholder="First Name" required>
                     <!-- This will add a small username font in the textbox!-->
                     <i class="bx bx-rename"></i>
                 </div>
                 <div class="input-box">
-                    <input type="text" placeholder="Last Name" required>
+                    <input type="text" name="lastName" placeholder="Last Name" required>
                     <!-- This will add a small username font in the textbox!-->
                     <i class="bx bx-rename"></i>
                 </div>
 
                 <!-- Username + Password: User Creativity -->
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" name="username" placeholder="Username" required>
                     <!-- This will add a small username font in the textbox!-->
                     <i class='bx bxs-user'></i>
                 </div>
 
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="Password" required>
                     <!-- This will add a small lock (for password) in the textbox-->
                     <i class='bx bxs-lock-alt'></i>
                 </div>
@@ -76,12 +149,19 @@ $phoneNumber = 0000000000; //Storing it as a default number so that when needed 
                 <!-- Email and Phone number in case they forget their password! -->
 
                 <div class="input-box">
-                    <input type="text" placeholder="Email" required>
+                    <input type="text" name="email" placeholder="Email" required>
                     <!-- This will add a small username font in the textbox!-->
                     <i class="bx bx-at"></i>
                 </div>
 
-                <button type="submit" class="btn">Sign Up</button>
+                <!-- The Error Messages will display here if anything fails! It makes sense to keep them in the bottom --->
+                 <?php 
+                    if(isset($errorMsg) && $errorMsg != ""){
+                        echo "Error: ".$errorMsg;
+                    }
+                    ?>
+
+                <button type="submit" name="create" class="btn">Sign Up</button>
 
             </form>
         </div>

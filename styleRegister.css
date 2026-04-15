@@ -30,6 +30,17 @@ body{
     font-size: 35px;
 }
 
+.error-message{
+    background-color: rgba(255, 0, 0, 0.3);
+    border: transparent;
+    border-radius: 5px;
+    color: #ff0000;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 14px;
+    width: 100%;
+}
 
 .wrapper{
     width: 420px;

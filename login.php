@@ -1,4 +1,6 @@
 <?php
+
+session_start();
 //I'll leave this php side empty, but this will also be paired up with SQL to handle
 //login information
 
@@ -16,6 +18,47 @@ statement
 
 how do we verify the password?: compare the given password and the actual password
 */
+
+include "connect.php";
+include "password.php";
+
+if(isset($_POST['login'])){
+    $userName = trim($_POST['username']);
+    $plainPassword = $_POST['password'];
+    $errorMsg = ""; //In case anything happens later on
+
+    //Using my prepared statement to prevent attackers from getting in
+    $stmt = $conn->prepare("SELECT id, passwordHash, firstName FROM StudySpaceUserAccounts WHERE username = ?");
+    $stmt->bind_param("s", $userName);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+
+    if($result->num_rows > 0){
+        $row = $result->fetch_assoc();
+
+        //Now time to verify the password
+
+        if(password_verify($plainPassword, $row['passwordHash'])){
+            //after verifying the password! We'll redirect to user's HOMEpage!
+            $_SESSION['userID'] = $row['id'];
+            $_SESSION['username'] = $userName;
+            $_SESSION['firstName'] = $row['firstName'];
+
+            header("Location: homepage.php");
+            exit();
+        }else{
+            $errorMsg = "Incorrect password!";
+        }
+
+    }else{
+        $errorMsg = "Username not found!";
+    }
+
+    $stmt->close();
+}
+
+$conn->close();
 
 ?>
 
@@ -38,16 +81,16 @@ how do we verify the password?: compare the given password and the actual passwo
             <h4>Let's get Some Work Done</h4>
         </div>
         <div class="wrapper">
-            <form action="">
+            <form method="POST" action="login.php">
                 <h1>Login</h1>
                 <div class="input-box">
-                    <input type="text" placeholder="Username" required>
+                    <input type="text" name="username" placeholder="Username" required>
                     <!-- This will add a small username font in the textbox!-->
                     <i class='bx bxs-user'></i>
                 </div>
 
                 <div class="input-box">
-                    <input type="password" placeholder="Password" required>
+                    <input type="password" name="password" placeholder="Password" required>
                     <!-- This will add a small lock (for password) in the textbox-->
                     <i class='bx bxs-lock-alt'></i>
                 </div>
@@ -57,7 +100,15 @@ how do we verify the password?: compare the given password and the actual passwo
                     <a href="forgotPassword.php">Forgot password?</a>
                 </div>
 
-                <button type="submit" class="btn">Login</button>
+                
+            <!--Place to put the errors at the end --->
+             <?php
+                    if(isset($errorMsg) && $errorMsg != ""){
+                        echo "Error: ".$errorMsg;
+                    }
+                ?> <br>
+
+                 <br><button type="submit" name="login" class="btn">Login</button>
 
                 <div class="register-link">
                     <p>Dont have an account?<a href="register.php"> Register</a></p>

@@ -1,5 +1,16 @@
 <?php
 //I will update this later with SQL to load/handle each user's saved information
+
+session_start();
+//isset to check if the user is logged in
+
+if(!isset($_SESSION['userID'])){
+    //if they're not, user will be redirected to login.php
+    header("Location: login.php");
+    exit();
+}
+
+$firstName = $_SESSION['firstName'];
 ?>
 
 <!DOCTYPE html>
@@ -21,8 +32,8 @@
         <!-- User Section -->
         <div class="section">
             <div class="content">
-                <h1 class="title">Welcome to StudySpace</h1>
-                <h2 class="subtitle">Your Personal Study Area</h2>
+                <h1 class="title">Hello, <?= htmlspecialchars($firstName) ?></h1>
+                <h2 class="subtitle">Welcome to StudySpace</h2>
                 <p class="description">Organize your thoughts, track your progress, and achieve your academic goals in one beautiful space!</p>
                 <div class="buttons">
                     <a href="extras/tutorial.html" class="getStarted">Get Started</a>
@@ -58,21 +69,21 @@
                 <h3>Timer</h3>
                 <p>Set study timers to maintain focused work sessions and take proper breaks.</p>
                 <br>
-                
+                <a href="Timer/timer.php" class="goTimer">Go!</a>
             </div>
             <div id="studyStats">
                 <i class='bx bx-bar-chart-alt-2 feature-icon'></i>
                 <h3>Study Statistics</h3>
                 <p>View overall analytics of all of your study sessions and track your progress over time.</p>
                 <br>
-                <a class="goStudyStats">Go!</a>
+                <a  href="StudyStats/studystat.php" class="goStudyStats">Go!</a>
             </div>
             <div id="Profile">
                 <i class='bx bxs-user'></i>
                 <h3>Profile</h3>
                 <p>Take a look at your profile and customize it.</p>
                 <br>
-                <a class="goProfile">Go!</a>
+                <a href="Profile/profile.php" class="goProfile">Go!</a>
             </div>
         </div>
     </body>
