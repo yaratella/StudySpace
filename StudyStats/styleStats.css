@@ -70,6 +70,20 @@ body {
     margin-bottom: 40px;
 }
 
+.stat-card-time{
+    background: transparent;
+    border: 1px solid #694A43; /*Makes a small border that blends smoothly with the background*/
+    backdrop-filter: blur(20px); /*Makes the background that it's behind a bit blurrier*/
+    color: white;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    padding: 35px 28px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px white; /*white glowy shadow*/
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
 /** got from my styleHomepage.css*/
 .stat-card{
     background: transparent;

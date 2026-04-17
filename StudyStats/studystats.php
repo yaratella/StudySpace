@@ -52,20 +52,28 @@ $conn->close();
             </div>
 
             <div id="statsContainer">
+                <!-- Getting Detailed with the amount of minutes too! --->
+                 <!-- I'll just display regular time (00: 00: 00) --->
                 <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class='bx bxs-time'></i>
-                    </div>
-                    <div class="stat-info">
-                        <h3>Total Hours</h3>
-                        <p class="stat-value"><?= $totalHours ?></p>
+                    <i class='bx bxs-time'></i>
+                    <div class="stat-info-time">
+                        <h3>Total Time</h3>
+                        <p class="stat-value">
+                            <?php
+                            $totalSeconds = round($totalHours * 3600);
+
+                            $hours = floor($totalSeconds / 3600);
+                            $minutes = floor(($totalSeconds % 3600) / 60);
+                            $seconds = $totalSeconds % 60;
+
+                            echo str_pad($hours, 2, '0', STR_PAD_LEFT).":".str_pad($minutes,2,'0',STR_PAD_LEFT).":".str_pad($seconds,2,'0', STR_PAD_LEFT);
+                            ?>
+                        </p>
                     </div>
                 </div>
 
                 <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class='bx bxs-bar-chart-alt-2'></i>
-                    </div>
+                    <i class='bx bxs-bar-chart-alt-2'></i>
                     <div class="stat-info">
                         <h3>Study Streak</h3>
                         <p class="stat-value">Coming soon...</p>
@@ -73,9 +81,7 @@ $conn->close();
                 </div>
 
                 <div class="stat-card">
-                    <div class="stat-icon">
-                        <i class='bx bxs-trophy'></i>
-                    </div>
+                    <i class='bx bxs-trophy'></i>
                     <div class="stat-info">
                         <h3>Achievement</h3>
                         <p class="stat-value">

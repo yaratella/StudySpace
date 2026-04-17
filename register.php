@@ -4,7 +4,7 @@ include "connect.php";
 include "password.php";
 
 //Making a new table
-
+//Changed this later on so that it can house floats, NOT INTS
 $sql = "CREATE TABLE IF NOT EXISTS StudySpaceUserAccounts (
         id INT PRIMARY KEY AUTO_INCREMENT,
         firstName VARCHAR(256) NOT NULL,

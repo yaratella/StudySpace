@@ -8,6 +8,9 @@ let timeLeft = 0;
 let totalTime = 0;
 let isRunning = false;
 
+//Do some sort of "auto save"
+let alreadySaved = false;
+
 function setTimer() {
     const selectedValue = timerDropdown.value;
 
@@ -34,6 +37,7 @@ function start(){
     if(!isRunning && timeLeft > 0){
         isRunning = true;
         timer = setInterval(countDown, 100); //Call the update function every 100 miliseconds
+        alreadySaved = false;
     }
 }
 
@@ -43,6 +47,11 @@ function stop(){
     if(isRunning){
         clearInterval(timer); //Stop it from running
         isRunning = false;
+    }
+
+    if(!alreadySaved){
+        saveTimerTime();
+        alreadySaved = true;
     }
 }
 
@@ -60,11 +69,17 @@ function reset(){
 function countDown() {
     timeLeft -= 100; //Decrease the time by 100 miliseconds
 
+    console.log("Time left:", timeLeft);
+
     if(timeLeft <= 0){
         timeLeft = 0; //Can't go lower than 0
         clearInterval(timer);
         isRunning = false;
-        //TIMe is done test: alert("Time's up!");
+        
+        if(!alreadySaved){
+            saveTimerTime();
+            alreadySaved = true;
+        }
     }
 
     updateDisplay();
@@ -86,4 +101,10 @@ function updateDisplay(){
     seconds = String(seconds).padStart(2,"0");
 
     display.querySelector('p').textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+//TESTING MY SAVE TIME FEATURE
+
+function saveTimerTime(){
+
 }

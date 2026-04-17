@@ -8,6 +8,8 @@ let isRunning = false;
 //This will be the variable that I will use to calculate the total time and display it in the Study Statistics
 let totalTime = 0;
 
+let hasSaved = false;
+
 function start(){
     if(!isRunning){
         startTime = Date.now() - elapsedTime;
@@ -20,11 +22,14 @@ function start(){
 function stop(){
     //Check to see if it's running
 
-    if(isRunning){
-        clearInterval(timer); //Stop it from running
-        elapsedTime = Date.now() - startTime;
-        isRunning = false;
+    if(!isRunning){
+        return;
     }
+
+    clearInterval(timer); //Stop it from running
+    elapsedTime = Date.now() - startTime;
+    isRunning = false;
+    saveStopwatchTime(); //EVERY TIME USER STOPS, THE FUNCTION HAS TO SAVE THEIR CURRENT TIME!
 }
 
 function reset(){
@@ -56,7 +61,11 @@ function update(){
     seconds = String(seconds).padStart(2,"0");
     miliseconds = String(miliseconds).padStart(2,"0");
 
-    totalTime += hours + minutes + seconds + miliseconds; //Adding it up in total
+    //totalTime += hours + minutes + seconds + miliseconds; //Adding it up in total
 
     display.textContent = `${hours}:${minutes}:${seconds}:${miliseconds}`;
+}
+
+function saveStopwatchTime(){
+ 
 }
