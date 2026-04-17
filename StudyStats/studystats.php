@@ -1,4 +1,7 @@
 <?php
+
+session_start();
+
 if(!isset($_SESSION['userID'])){
     //Redirect the user to login if they are not logged in yet
     header("Location: ../login.php");
@@ -9,7 +12,7 @@ if(!isset($_SESSION['userID'])){
 include "../connect.php";
 include "../password.php";
 
-$userID = (int) $_SESSON['userID'];
+$userID = (int) $_SESSION['userID'];
 
 //Getting the user's total study hours
 //Got this from my previous connection attempts (login.php)
@@ -37,11 +40,9 @@ $conn->close();
         <title>StudySpace Study Statistics</title>
 
         <!-- Load my content for the login page -->
-        <link rel="stylesheet" href="styleStudyStats.css" rel="stylesheet">
+        <link rel="stylesheet" href="styleStats.css" rel="stylesheet">
         <!-- Online Icon Linked (incase I need to use it again) -->
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
-        <!-- found a website with guides on creating a chart: https://www.chartjs.org/docs/latest/getting-started/ -->
-         <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     </head>
     <body>
         <div class="body">
@@ -56,7 +57,7 @@ $conn->close();
                         <i class='bx bxs-time'></i>
                     </div>
                     <div class="stat-info">
-                        <h3>Total Study Hours</h3>
+                        <h3>Total Hours</h3>
                         <p class="stat-value"><?= $totalHours ?></p>
                     </div>
                 </div>
@@ -67,7 +68,7 @@ $conn->close();
                     </div>
                     <div class="stat-info">
                         <h3>Study Streak</h3>
-                        <p>Coming soon...</p>
+                        <p class="stat-value">Coming soon...</p>
                     </div>
                 </div>
 
@@ -79,26 +80,19 @@ $conn->close();
                         <h3>Achievement</h3>
                         <p class="stat-value">
                             <?php
-                            if($totalHours >= 100) echo "Study Master";
-                            elseif($totalHours >= 50) echo "Study Expert";
-                            elseif($totalHours >= 20) echo "Study Enthusiast"; 
-                            else echo "just Started";
+                            if($totalHours >= 1500) echo " The Ultimate Legend ";
+                            elseif($totalHours >= 900) echo " Night Owl ";
+                            elseif($totalHours >= 500) echo " Know it All ";
+                            elseif($totalHours >= 100) echo " Study Master ";
+                            elseif($totalHours >= 50) echo " Study Expert ";
+                            elseif($totalHours >= 20) echo " Study Enthusiast "; 
+                            else echo " Just Started ";
                             ?>
                         </p>
                     </div>
                 </div>
 
             </div>
-
-            <!-- Sourced from chart website --->
-            <div id="chartContainer">
-                <canvas id="studyChart"></canvas>
-            </div>
-
             <a id="backBtn" href="../homepage.php" class="goBack">Back</a>
-
-            <!-- This is where all of my javascript will go, putting it in the same file will just be easier for me later on! -->
-            <script>
-            </script>
     </body>
 </html>

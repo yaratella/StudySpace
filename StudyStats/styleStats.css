@@ -1,0 +1,101 @@
+/*
+Will update this section with Website Main Colors:
+-#F5E6E8 <-- Light pink color
+-#694A43D <--Light brown Color
+-#2E1F1E <-- Darker Brown
+-ACD77E <--Light green
+-#D9AFAF <-- Darker pink color
+-White
+-Black
+*/
+
+/* Using the same font as the login page*/
+* {
+    overflow-x: hidden; /*This stops all the boxes from going over the page*/
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /*fancy-like font*/
+}
+
+
+body {
+    margin: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 20px;
+    min-height: 100vh;
+    width: 100%;
+    background: url('BG.jpg') no-repeat;/*Imported an image as a background*/
+    background-size: cover; /*makes sure that it wont be small and on the side!*/
+    background-position: center;
+    padding-left: 160px; /*Added a bit of spacing, but im keeping the login things to the left*/
+}
+
+.body{
+    width: 100%;
+    max-width: 900px;
+    background: transparent;
+    border: 1px solid #694A43;
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 10px rgba(0,0,0, 0.2);
+    border-radius: 10px;
+    padding: 40px;
+}
+
+#header{
+    text-align: center;
+    margin-bottom: 40px;
+    color: white;
+}
+
+
+#header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+}
+
+
+#header p {
+    font-size: 1.1rem;
+    color: white;
+}
+
+#statsContainer{
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+/** got from my styleHomepage.css*/
+.stat-card{
+    background: transparent;
+    border: 1px solid #694A43; /*Makes a small border that blends smoothly with the background*/
+    backdrop-filter: blur(20px); /*Makes the background that it's behind a bit blurrier*/
+    color: white;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    padding: 35px 28px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px white; /*white glowy shadow*/
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+}
+
+/* Brought link styles from my profile page */
+
+a {
+    color: #2E1F1E; /*Color stays the same*/
+    background: #F5E6E8; /*Background changes and becomes lighter*/
+    text-decoration: none;
+    border-radius: 40px;
+    padding: 5px 10px;
+}
+
+a:hover {
+    color: #2E1F1E;
+    background: #C17B7B; /*Darker pink buttons*/
+}
