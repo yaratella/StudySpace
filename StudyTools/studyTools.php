@@ -22,42 +22,59 @@ if(!isset($_SESSION['userID'])){
         <title>StudySpace Tools</title>
 
         <!-- Load my content for the login page -->
-        <link rel="stylesheet" href="styleHomepage.css" rel="stylesheet">
+        <link rel="stylesheet" href="styleStudyTools.css" rel="stylesheet">
 
         <!-- Online Icon Linked (incase I need to use it again) -->
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+            <!-- Font Awesome Icons -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet"/>
     </head>
 
     <body>
-        <!-- Starting off with flashcards: make each flashcard into a div, or make it into a class? --->
-        <div class="container">
-            <div class="add-flashcard-con">
-                <button id="add-flashcard">Add Flashcard</button>
-            </div>
-            <!-- Display the cardof auestion and answers here! --->
-            <div id="card-con">
-                <div class="card-list-container"></div>
-            </div>
-         <!-- Input form for the users to fill the question and then the answer for their flashcards --->
-          <div class="question-container hide" id="add-question-card">
-                <h2>Add Flashcard</h2>
-                <div class="wrapper">
-                    <!--- Error Message --->
-                    <div class="error-con">
-                        <span class="hide" id="error">Input fields can't be empty!</span>
-                    </div>
-                    <!--- Close Button --->
-                    <i class="fa-solid fa-xmark" id="close-btn"></i>
-                </div>
+<div class="container">
+      <a id="backBtn" href="../homepage.php" class="goBack">Back</a>
+      <div class="add-flashcard-con">
+        <button id="add-flashcard">Add Flashcard</button>
+      </div>
 
-                <label for="question">Question:</label>
-                <textarea class="input" id="question" placeholder="Type the question here..." rows="2"></textarea>
+      <!-- Display Card of Question And Answers Here -->
+      <div id="card-con">
+        <div class="card-list-container"></div>
+      </div>
+    </div>
 
-                <label for="answer">Answer:</label>
-                <textarea class="input" id="answer" placeholder="Type the answer here..." rows="4"></textarea>
-
-                <button id="save-btn">Save</button>
+    <!-- users prompted to fill question and answer -->
+    <div class="question-container hide" id="add-question-card">
+      <h2>Add Flashcard</h2>
+      <div class="wrapper">
+        <!-- Display Error message -->
+        <div class="error-con">
+          <span class="hide" id="error">Input fields cannot be empty!</span>
         </div>
-        <script src="tools.js"></script>
-    </body>
+        <!-- Close the Button -->
+        <i class="fa-solid fa-xmark" id="close-btn"></i>
+      </div>
+
+      <label for="question">Question:</label>
+      <textarea
+        class="input"
+        id="question"
+        placeholder="Type the question here..."
+        rows="2"
+      ></textarea>
+      <label for="answer">Answer:</label>
+      <textarea
+        class="input"
+        id="answer"
+        rows="4"
+        placeholder="Type the answer here..."
+      ></textarea>
+      <button id="save-btn">Save</button>
+    </div>
+
+    <!-- Script -->
+    <script src="tools.js"></script>
+  </body>
 </html>

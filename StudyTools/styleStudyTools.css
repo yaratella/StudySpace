@@ -9,15 +9,15 @@ Will update this section with Website Main Colors:
 -Black
 */
 
-/* Using the same font as the login page*/
 * {
-    overflow-x: hidden; /*This stops all the boxes from going over the page*/
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /*fancy-like font*/
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden; /*This stops all the boxes from going over the page*/
+  box-sizing: border-box;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /*fancy-like font*/
+  box-sizing: border-box;
+  color: white;
 }
-
 
 body {
     margin: 0;
@@ -26,8 +26,234 @@ body {
     align-items: center;
     min-height: 100vh;
     width: 100%;
-    background: url('images/homepg.png') no-repeat;/*Imported an image as a background*/
+    background: url('cutsey.jpg') no-repeat;/*Imported an image as a background*/
     background-size: cover; /*makes sure that it wont be small and on the side!*/
     background-position: center;
     padding-left: 160px; /*Added a bit of spacing, but im keeping the login things to the left*/
+}
+
+.container {
+  width: 90vw;
+  height: 50vw;
+  max-width: 1200px;
+  min-height: 80vh;
+  position: absolute;
+  background: transparent;
+  padding: 2em;
+  border: 1px solid #694A43; /*Makes a small border that blends smoothly with the background*/
+  backdrop-filter: blur(20px); /*Makes the background that it's behind a bit blurrier*/
+  box-shadow: 0 0 10px rgba(0, 0, 0,  0.2);
+  color: white;
+}
+
+.add-flashcard-con {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.2em 1em;
+}
+
+button {
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.add-flashcard-con button {
+  font-size: 1em;
+  background-color: #694A43;
+  color: #ffffff;
+  padding: 0.8em 1.2em;
+  font-weight: 500;
+  border-radius: 0.4em;
+}
+
+#card-con {
+  margin-top: 1em;
+}
+
+.question-container {
+    background: transparent;
+    border: 1px solid #694A43; /*Makes a small border that blends smoothly with the background*/
+    backdrop-filter: blur(20px); /*Makes the background that it's behind a bit blurrier*/
+    box-shadow: 0 0 10px rgba(0, 0, 0,  0.2);
+    color: white;
+    width: 90vw;
+    max-width: 34em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    padding: 3em 2em;
+    border-radius: 0.6em;
+}
+
+.question-container h2 {
+  font-size: 2.2em;
+  color: black;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 11fr 1fr;
+  gap: 1em;
+  margin-bottom: 1em;
+}
+
+.error-con {
+  align-self: center;
+}
+
+#error {
+  color: red;
+  font-weight: 400;
+}
+
+.fa-xmark {
+  font-size: 1.4em;
+  height: 1em;
+  width: 1em;
+  display: grid;
+  place-items: center;
+  color: #694A43;
+  border-radius: 50%;
+  cursor: pointer;
+  justify-self: flex-end;
+}
+
+label {
+  color: black;
+  font-weight: 600;
+  margin-bottom: 0.3em;
+}
+
+textarea {
+  width: 100%;
+  padding: 0.7em 0.5em;
+  border: 1px solid #d0d0d0;
+  outline: none;
+  color: #414a67;
+  border-radius: 0.3em;
+  resize: none;
+}
+
+textarea:not(:last-child) {
+  margin-bottom: 1.2em;
+}
+
+textarea:focus {
+  border-color: #363d55;
+}
+
+#save-btn {
+  font-size: 1em;
+  background-color: #694A43;
+  color: #ffffff;
+  padding: 0.6em 0;
+  border-radius: 0.3em;
+  font-weight: 600;
+}
+
+.card-list-container {
+  display: grid;
+  padding: 0.2em;
+  gap: 1.5em;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.card {
+  padding: 1.2em;
+  border-radius: 0.4em;
+  background: transparent;
+  border: 1px solid #694A43; /*Makes a small border that blends smoothly with the background*/
+  backdrop-filter: blur(20px); /*Makes the background that it's behind a bit blurrier*/
+  box-shadow: 0 0 10px rgba(0, 0, 0,  0.2);
+}
+
+.question-div,
+.answer-div {
+  text-align: justify;
+}
+
+.question-div {
+  margin-bottom: 0.5em;
+  font-weight: 500;
+  color: #363d55;
+}
+
+.answer-div {
+  margin-top: 1em;
+  font-weight: 400;
+  color: #414a67;
+}
+
+.show-hide-btn {
+  display: block;
+  background-color: #694A43; /* Updated color */
+  color: #ffffff;
+  text-decoration: none;
+  text-align: center;
+  padding: 0.6em 0;
+  border-radius: 0.3em;
+}
+
+.buttons-con {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit,
+.delete {
+  background-color: transparent;
+  padding: 0.5em;
+  font-size: 1.2em;
+}
+
+.edit {
+  color: #4caf50;
+}
+
+.delete {
+  color: #ff5353;
+}
+
+.hide {
+  display: none;
+}
+
+@media screen and (max-width: 800px) {
+  .card-list-container {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.8em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  body {
+    font-size: 14px;
+  }
+  .card-list-container {
+    grid-template-columns: 1fr;
+    gap: 1.2em;
+  }
+}
+
+/* Brought link styles from my profile page */
+
+a {
+    color: #2E1F1E; /*Color stays the same*/
+    background: #F5E6E8; /*Background changes and becomes lighter*/
+    text-decoration: none;
+    border-radius: 40px;
+    padding: 5px 10px;
+}
+
+a:hover {
+    color: #2E1F1E;
+    background: #C17B7B; /*Darker pink buttons*/
 }
