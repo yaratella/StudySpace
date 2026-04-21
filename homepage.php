@@ -50,12 +50,12 @@ $firstName = $_SESSION['firstName'];
                 <br>
                 <a href="StudyTools/studyTools.php" class="goStudyTools">Go!</a>
             </div>
-            <div id="StudyCalendar">
-                <i class='bx bx-calendar feature-icon'></i>
-                <h3>Calendar</h3>
-                <p>Plan your study sessions and keep track of important deadlines and tasks.</p>
+            <div id="StudyGames">
+                <i class='bx bxs-chess feature-icon'></i>
+                <h3>Mind Games</h3>
+                <p>Take a break and wind down with our fun mini mind games!</p>
                 <br>
-                <a class="goCalendar">Go!</a>
+                <a href="Games/games.php" class="goGames">Go!</a>
             </div>
             <div id="stopwatch">
                 <i class='bx bx-stopwatch feature-icon'></i>

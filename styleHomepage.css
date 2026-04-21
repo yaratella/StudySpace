@@ -127,7 +127,7 @@ body {
 
 /*All of the individual Feature Cards*/
 
-#StudyTools, #StudyCalendar, #stopwatch, #timer, #studyStats, #Profile{
+#StudyTools, #StudyGames, #stopwatch, #timer, #studyStats, #Profile{
     background: transparent;
     border: 1px solid #694A43; /*Makes a small border that blends smoothly with the background*/
     backdrop-filter: blur(20px); /*Makes the background that it's behind a bit blurrier*/
@@ -141,7 +141,7 @@ body {
     cursor: pointer;
 }
 
-.goStudyTools, .goCalendar, .goStopWatch, .goTimer, .goStudyStats, .goProfile{
+.goStudyTools, .goGames, .goStopWatch, .goTimer, .goStudyStats, .goProfile{
     margin-top: 25px;
     color: #2E1F1E;
     background: #C17B7B; /*Darker pink buttons*/
@@ -152,14 +152,14 @@ body {
 
 /* Adding features for when you hover over the mini buttons*/
 
-.goStudyTools:hover, .goCalendar:hover, .goStopWatch:hover, .goTimer:hover, .goStudyStats:hover, .goProfile:hover{
+.goStudyTools:hover, .goGames:hover, .goStopWatch:hover, .goTimer:hover, .goStudyStats:hover, .goProfile:hover{
     color: #2E1F1E; /*Color stays the same*/
     background: #F5E6E8; /*Background changes and becomes lighter*/
 }
 
 /* Will add some sort of hover feature that will make them either go up, or go down?*/
 
-#StudyTools:hover, #StudyCalendar:hover, #stopwatch:hover, #timer:hover, #studyStats:hover,#Profile:hover {
+#StudyTools:hover, #StudyGames:hover, #stopwatch:hover, #timer:hover, #studyStats:hover,#Profile:hover {
     transform:translateY(5px);
     box-shadow: 0 10px 35px white; /*white glowy shadow glows stronger*/
     border: none;
