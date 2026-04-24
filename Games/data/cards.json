@@ -1,0 +1,38 @@
+[
+    {
+        "image": "./icons/chili.png",
+        "name": "chili"
+    },
+    {
+        "image": "./icons/grapes.png",
+        "name": "grapes"
+    },
+    {
+        "image": "./icons/lemon.png",
+        "name": "lemon"
+    },
+    {
+        "image": "./icons/orange.png",
+        "name": "orange"
+    },
+    {
+        "image": "./icons/pineapple.png",
+        "name": "pineapple"
+    },
+    {
+        "image": "./icons/strawberry.png",
+        "name": "strawberry"
+    },
+    {
+        "image": "./icons/tomato.png",
+        "name": "tomato"
+    },
+    {
+        "image": "./icons/watermelon.png",
+        "name": "watermelon"
+    },
+    {
+        "image": "./icons/cherries.png",
+        "name": "cherries"
+    }
+]

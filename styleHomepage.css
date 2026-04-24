@@ -1,9 +1,9 @@
 /*
 Will update this section with Website Main Colors:
 -#F5E6E8 <-- Light pink color
--#694A43D <--Light brown Color
+-#694A43 <--Light brown Color
 -#2E1F1E <-- Darker Brown
--ACD77E <--Light green
+#ACD77E <--Light green
 -#D9AFAF <-- Darker pink color
 -White
 -Black
@@ -32,14 +32,17 @@ body {
     padding-left: 160px; /*Added a bit of spacing, but im keeping the login things to the left*/
 }
 
-/*Main section user will see in the homepage*/
+/*Main section user will see in the homepage
+
+justify-content: center;
+
+*/
 .section {
     display: flex;
-    justify-content: center;
     align-items: center;
     min-height: 500px;
-    padding: 80px 40px 40px;
-    width: 100%;
+    padding: 30px 50px 75px 50px;
+    margin-left: 120px;
     color: white;
     background: transparent;
     border: 1px solid #694A43; /*Makes a small border that blends smoothly with the background*/
@@ -69,7 +72,7 @@ body {
     font-size: 26px;
     color: #2E1F1E;
     margin-bottom: 20px;
-    font-weight: 600px;
+    font-weight: 600;
 }
 
 .description {
@@ -127,7 +130,7 @@ body {
 
 /*All of the individual Feature Cards*/
 
-#StudyTools, #StudyGames, #stopwatch, #timer, #studyStats, #Profile{
+#StudyTools, #studyGame, #stopwatch, #timer, #studyStats, #Profile{
     background: transparent;
     border: 1px solid #694A43; /*Makes a small border that blends smoothly with the background*/
     backdrop-filter: blur(20px); /*Makes the background that it's behind a bit blurrier*/
@@ -159,7 +162,7 @@ body {
 
 /* Will add some sort of hover feature that will make them either go up, or go down?*/
 
-#StudyTools:hover, #StudyGames:hover, #stopwatch:hover, #timer:hover, #studyStats:hover,#Profile:hover {
+#StudyTools:hover, #studyGame:hover, #stopwatch:hover, #timer:hover, #studyStats:hover,#Profile:hover {
     transform:translateY(5px);
     box-shadow: 0 10px 35px white; /*white glowy shadow glows stronger*/
     border: none;

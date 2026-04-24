@@ -21,8 +21,9 @@ body{
 }
 
 #WelcomingMessage{
+    overflow-x: hidden;
     position: absolute;
-    right: -50px;
+    right: 30px;
     top: 50%;
     transform: translateY(-50%);
     color: white;

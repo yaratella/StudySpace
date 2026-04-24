@@ -1,0 +1,246 @@
+
+/*
+Will update this section with Website Main Colors:
+-#F5E6E8 <-- Light pink color
+-#694A43 <--Light brown Color
+-#2E1F1E <-- Darker Brown
+-ACD77E <--Light green
+-#D9AFAF <-- Darker pink color
+-White
+-Black
+*/
+
+/* ---- 10 Required Color Classes ---- */
+.black   { background-color: black;   }
+.red     { background-color: red;     }
+.blue    { background-color: blue;    }
+.yellow  { background-color: yellow;  }
+.green   { background-color: green;   }
+.purple  { background-color: purple;  }
+.orange  { background-color: orange;  }
+.cyan    { background-color: cyan;    }
+.magenta { background-color: magenta; }
+.gray    { background-color: gray;    }
+
+/* ---- Reset ---- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif; /*fancy-like font*/
+    box-sizing: border-box;
+}
+
+/* ---- Body ---- */
+body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    width: 100%;
+    background: url('cutsey.jpg') no-repeat;/*Imported an image as a background*/
+    background-size: cover; /*makes sure that it wont be small and on the side!*/
+    background-position: center;
+    background-attachment: fixed;
+    padding: 2em 0;
+}
+
+/* ---- Step 1: Page Header ---- */
+h1 {
+    margin-top: 35px;
+    font-size: 2rem;
+    color: #694A43;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Step indicator div - upper right corner */
+#step-indicator {
+    position: fixed;
+    top: 16px;
+    right: 20px;
+    background-color: #694A43;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    z-index: 999;
+}
+
+/* ---- Game Wrapper ---- */
+#game-wrapper {
+    max-width: 1100px;
+    width: 90%;
+    background: transparent;
+    padding: 2em 3em;
+    border: 1px solid #694A43; /*Makes a small border that blends smoothly with the background*/
+    backdrop-filter: blur(20px); /*Makes the background that it's behind a bit blurrier*/
+    box-shadow: 0 0 10px rgba(0, 0, 0,  0.2);
+    color: white;
+}
+
+h2 {
+    font-size: 1.6rem;
+    color: #694A43;
+    margin-bottom: 6px;
+}
+
+.subtitle {
+    font-size: 0.9rem;
+    color: #694A43;
+    margin-bottom: 20px;
+}
+
+/* ---- Step 2: Color Strip Table ---- */
+#strip-wrapper {
+    margin-bottom: 16px;
+}
+
+#color-strip {
+    border-collapse: collapse;
+    border: 3px solid #694A43;
+}
+
+.strip-cell {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.1s;
+}
+
+.strip-cell:hover {
+    transform: scale(1.1);
+    border: 2px solid white;
+}
+
+/* Selected state for strip cell */
+.strip-cell.selected {
+    border: 4px solid white;
+    outline: 3px solid #D9AFAF;
+    transform: scale(1.15);
+    z-index: 1;
+    position: relative;
+}
+
+/* ---- Step 3: Main Game Table ---- */
+#grid-wrapper {
+    overflow: auto;
+    align-items: center;
+    justify-content: center;
+}
+
+#game-grid {
+    border-collapse: collapse;
+    border: 3px solid #694A43;
+}
+
+.game-cell {
+    width: 30px;
+    height: 30px;
+    background-color: white; /* default, overridden by inline style on toggle */
+    border: 1px solid #cccccc;
+    cursor: pointer;
+    transition: background-color 0.15s;
+}
+
+.game-cell:hover {
+    border: 1px solid #999999;
+    opacity: 0.85;
+}
+
+p{
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.actions{
+    display: flex;
+    justify-content: center;
+}
+
+.actions button{
+    padding: 8px 16px;
+    font-size: 30px;
+    border-radius: 10px;
+    background-color: #D9AFAF;
+    color: white;
+}
+
+.grid-container{
+    display: grid;
+    overflow: visible;
+    justify-content: center;
+    grid-gap: 10px;
+    grid-template-columns: repeat(6, 100px);
+    grid-template-rows: repeat(3, calc(100px / 2 * 3));
+    perspective: 1000px;
+}
+
+.card {
+  height: calc(100px / 2 * 3);
+  width: 100px;
+  border-radius: 10px;
+  background: transparent;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+  overflow: visible;
+}
+
+.front-image {
+  width: 45px;
+  height: 45px;
+
+}
+
+.card.flipped{
+    transform: rotateY(180deg);
+}
+
+.front, .back{
+    backface-visibility: hidden;
+    position: absolute;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.card .front{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: rotateY(180deg); /*Starts hidden, revealed when .flipped*/
+}
+
+.card .back{
+    background:#694A43;
+    background-position: center center;
+    background-size: cover;
+    backface-visibility: hidden;
+    transform: rotateY(0deg);
+
+}
+/* Brought link styles from my profile page */
+
+a {
+    color: #2E1F1E; /*Color stays the same*/
+    background: #F5E6E8; /*Background changes and becomes lighter*/
+    text-decoration: none;
+    border-radius: 40px;
+    padding: 5px 10px;
+}
+
+a:hover {
+    color: #2E1F1E;
+    background: #C17B7B; /*Darker pink buttons*/
+}

@@ -50,7 +50,7 @@ $firstName = $_SESSION['firstName'];
                 <br>
                 <a href="StudyTools/studyTools.php" class="goStudyTools">Go!</a>
             </div>
-            <div id="StudyGames">
+            <div id="studyGame">
                 <i class='bx bxs-chess feature-icon'></i>
                 <h3>Mind Games</h3>
                 <p>Take a break and wind down with our fun mini mind games!</p>

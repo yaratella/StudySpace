@@ -80,7 +80,7 @@ $conn->close();
         <title>StudySpace Login</title>
 
         <!-- Load my content for the login page -->
-        <link rel="stylesheet" href="styleLogin.css" rel="stylesheet">
+        <link rel="stylesheet" href="styleLog.css" rel="stylesheet">
         <!-- Online Icon Linked (incase I need to use it again) -->
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     </head>
