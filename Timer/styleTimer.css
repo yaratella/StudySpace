@@ -22,7 +22,7 @@ body {
     margin: 0;
     min-height: 100vh;
     width: 100%;
-    background: url('timer.png') no-repeat;/*Imported an image as a background*/
+    background: url('../images/timer.png') no-repeat;/*Imported an image as a background*/
     background-size: cover; /*makes sure that it wont be small and on the side!*/
     background-position: center;
     display: flex;
