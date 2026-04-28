@@ -5,7 +5,7 @@ include "../connect.php";
 //is the user logged in?
 
 if(isset ($_POST['studyTime']) && isset($_SESSION['userID'])){
-    $userID = (int) $SESSION['userID'];
+    $userID = (int) $_SESSION['userID'];
     $hours = (float) $_POST['studyTime'];
 
     $stmt = $conn -> prepare("
