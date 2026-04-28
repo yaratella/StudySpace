@@ -33,7 +33,7 @@ include "../connect.php"
                 </div>
 
             </div>
-            <script src="index.js"></script>
+            <script src="index-stopwatch.js"></script>
             <a href="https://cs.colostate.edu:4444/~C836987719/StudySpace/homepage.php" class="goBack">Back</a>
         </div>
     </body>

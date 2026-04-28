@@ -1,10 +1,24 @@
 <?php
+session_start();
+include "../connect.php";
 
-//This will be a section to give the user options of how long they would like to study. Options include:
+//is the user logged in?
 
-// 3hours, 2 hours, 1 hour, 30 minutes, 25 minutes, 15 minutes.
+if(isset ($_POST['studyTime']) && isset($_SESSION['userID'])){
+    $userID = (int) $SESSION['userID'];
+    $hours = (float) $_POST['studyTime'];
 
-//Greet the user, ten have them click on an option, record what they will pick and use it with some javascript to figure out which option to set the display as
+    $stmt = $conn -> prepare("
+    UPDATE StudySpaceUserAccounts
+    SET totalStudyHours = totalStudyHours + ?
+    WHERE id = ?
+    ");
+
+    $stmt->bind_param("di",$hours, $userID);
+    $stmt->execute();
+
+    $stmt->close();
+}
 
 ?>
 
@@ -62,8 +76,13 @@
                     </div>
             </div>
         </div>
-        <script src="index.js"></script>
+        <script src="index-timer.js"></script>
         <a id="backBTN" href="https://cs.colostate.edu:4444/~C836987719/StudySpace/homepage.php" class="goBack">Back</a>
+
+        <form id="timeForm" method="POST">
+            <!--- Adding a hidden form that will save all of the time, and then send it to studyStats (to connect the number to the database successfully) --->
+            <input type="hidden" name="studyTime" id="studyTimeInput">
+        </form>
     </body>
 
 </html>

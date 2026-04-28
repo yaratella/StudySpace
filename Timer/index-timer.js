@@ -106,5 +106,12 @@ function updateDisplay(){
 //TESTING MY SAVE TIME FEATURE
 
 function saveTimerTime(){
+    let timeStudied = totalTime - timeLeft;
 
+    //Converting to hours (since DB stores hours)
+    let hoursStudied = timeStudied / (1000 * 60 * 60);
+
+    document.getElementById("studyTimeInput").value = hoursStudied;
+
+    document.getElementById("timeForm").submit();
 }
