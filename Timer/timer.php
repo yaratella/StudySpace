@@ -80,7 +80,7 @@ if(isset ($_POST['studyTime']) && isset($_SESSION['userID'])){
             </div>
         </div>
         <script src="index-timer.js"></script>
-        <a id="backBTN" href="https://cs.colostate.edu:4444/~C836987719/StudySpace/homepage.php" class="goBack">Back</a>
+        <a id="backBTN" href="../homepage.php" class="goBack">Back</a>
 
         <!-- This form will be updated everytime the user clicks on stop (which means the website will be refreshed everytime) --->
         <form id="timeForm" method="POST">
