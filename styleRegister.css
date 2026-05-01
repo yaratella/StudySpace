@@ -34,7 +34,7 @@ body{
     background-color: rgba(255, 0, 0, 0.3);
     border: transparent;
     border-radius: 5px;
-    color: #ff0000;
+    color: #ff0000; /*testing this, will this appear bright, or will I need some other eye-catching color?*/
     padding: 15px;
     margin-bottom: 20px;
     text-align: center;
@@ -79,7 +79,7 @@ body{
     border: 2px solid rgba(255, 255, 255, 0.2);
     border-radius: 40px;
     font-size: 16px;
-    color: white;
+    color: white; /*input text will always be white*/
     padding: 20px 45px 20px 20px; /*Adding space for what's being typed*/
 }
 
@@ -108,7 +108,7 @@ body{
     box-shadow: 0 0 10px rgba(0, 0, 0, .1);/*Figured out how to give the button a small shadow*/
     font-size: 16px;
     color: #333;
-    font-weight: 600;/*Referenced from online w3schools*/
+    font-weight: 600;/*Referenced from online w3schools, makes it slightly bolder*/
     
 }
 

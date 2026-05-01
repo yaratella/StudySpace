@@ -15,6 +15,8 @@ statement
 how do we verify the password?: compare the given password and the actual password
 */
 
+//Sourced connect.php from TA posting on teams
+
 header('Access-Control-Allow-Origin: *');
 
 include "password.php";
@@ -25,6 +27,7 @@ $conn = new mysqli($servername, $username, $password, $db);
 
 // Check connection
 if ($conn->connect_error) {
+    //if it can't connect?
     die("Connection failed: " . $conn->connect_error);
 }
 

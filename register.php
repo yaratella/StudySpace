@@ -5,6 +5,7 @@ include "password.php";
 
 //Making a new table
 //Changed this later on so that it can house floats, NOT INTS
+//Update: copied this into my database to create it!
 $sql = "CREATE TABLE IF NOT EXISTS StudySpaceUserAccounts (
         id INT PRIMARY KEY AUTO_INCREMENT,
         firstName VARCHAR(256) NOT NULL,
@@ -16,6 +17,7 @@ $sql = "CREATE TABLE IF NOT EXISTS StudySpaceUserAccounts (
         createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )";
 
+//create account
 if(isset($_POST['create'])){
     //Storing all of the values that the user names in this table
     $firstName = $_POST['firstName'];
@@ -40,7 +42,7 @@ if(isset($_POST['create'])){
 
     //Checking for special Characters: #, %, /, ., @, $
     $requiredChars = ['!','@','#','$','%','.', '/'];
-    $hasOne = false;
+    $hasOne = false; //by default there will be no special characters
 
     foreach($requiredChars as $char){
         if(strpos($plainPassword, $char) !== false){ //Searches for any occurance of any character in the array
@@ -50,6 +52,7 @@ if(isset($_POST['create'])){
     }
 
     if(!$hasOne){
+        //if there is no special character in the password, then an error message has to be displayed
         $hasError = true;
         $errorMsg .= "Password must contain a special character: ! @ # $ % % . /";
     }
@@ -157,6 +160,7 @@ $conn->close();
                 <!-- The Error Messages will display here if anything fails! It makes sense to keep them in the bottom --->
                  <?php 
                     if(isset($errorMsg) && $errorMsg != ""){
+                        //error messages will display on the bottom of the registration area
                         echo "Error: ".$errorMsg;
                     }
                     ?>

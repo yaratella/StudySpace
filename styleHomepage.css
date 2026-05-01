@@ -44,7 +44,7 @@ justify-content: center;
     padding: 30px 50px 75px 50px;
     margin-left: 120px;
     color: white;
-    background: transparent;
+    background: transparent; /*cleaner look than using colors*/
     border: 1px solid #694A43; /*Makes a small border that blends smoothly with the background*/
     backdrop-filter: blur(20px); /*Makes the background that it's behind a bit blurrier*/
     box-shadow: 0 8px 32px white;

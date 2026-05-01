@@ -1,11 +1,6 @@
 <?php
 
-//This space will be used to access the database and send and email to them, then refactor the password again
-
-//Ask TA For Help on how to access data from an SQL database and manipulate it!
-
-
-//Make sure that the new password isn't the old password, and that it
+//Not going to update my website to change password through email since I don't know how to implement this feature yet.
 
 ?>
 

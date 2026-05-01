@@ -19,8 +19,8 @@ statement
 how do we verify the password?: compare the given password and the actual password
 */
 
-include "connect.php";
-include "password.php";
+include "connect.php"; //To connect to the database
+include "password.php"; //To access the database password
 
 if(isset($_POST['login'])){
     $userName = trim($_POST['username']);
@@ -34,7 +34,7 @@ if(isset($_POST['login'])){
     $result = $stmt->get_result();
 
 
-    if($result->num_rows > 0){
+    if($result->num_rows > 0){ //making sure that it's greater than 0 (because user's password has to be greater than 0)
         $row = $result->fetch_assoc();
 
         //Now time to verify the password
@@ -45,22 +45,23 @@ if(isset($_POST['login'])){
             $_SESSION['username'] = $userName;
             $_SESSION['firstName'] = $row['firstName'];
 
-            header("Location: homepage.php");
+            header("Location: homepage.php"); //after password is verified then they'll be directed to homepage.php
             exit();
         }else{
-            $errorMsg = "Incorrect password!";
+            $errorMsg = "Incorrect password!"; //when wrong
         }
 
     }else{
-        $errorMsg = "Username not found!";
+        $errorMsg = "Username not found!"; //if their password is right, then it'll just tell them that their username is wrong
     }
 
-    $stmt->close();
+    $stmt->close(); //closing the stmt so that this doesnt break
 }
 
 //Before the conn is closed, implement LOGOUT feature
 
 if(isset($_GET['action']) && $_GET['action'] == 'logout'){
+    //profile will send action logout, logout will redirect them here!
     session_destroy(); //closes the session
     $_SESSION = [];
     header("Location: login.php"); //redirects the user back to login.php

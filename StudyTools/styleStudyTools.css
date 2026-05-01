@@ -38,7 +38,7 @@ body {
   max-width: 1200px;
   min-height: 80vh;
   position: absolute;
-  background: transparent;
+  background: transparent; /*background will stay transparent*/
   padding: 2em;
   border: 1px solid #694A43; /*Makes a small border that blends smoothly with the background*/
   backdrop-filter: blur(20px); /*Makes the background that it's behind a bit blurrier*/
@@ -47,7 +47,7 @@ body {
 }
 
 .add-flashcard-con {
-  display: flex;
+  display: flex; /*Fluid display*/
   justify-content: flex-end;
   padding: 1.2em 1em;
 }
@@ -76,7 +76,7 @@ button {
     border: 1px solid #694A43; /*Makes a small border that blends smoothly with the background*/
     backdrop-filter: blur(20px); /*Makes the background that it's behind a bit blurrier*/
     box-shadow: 0 0 10px rgba(0, 0, 0,  0.2);
-    color: white;
+    color: white; /*To make the webpage look bright and pop out*/
     width: 90vw;
     max-width: 34em;
     display: flex;
@@ -94,7 +94,7 @@ button {
   font-size: 2.2em;
   color: black;
   font-weight: 600;
-  text-align: center;
+  text-align: center; /*Rather than right align, this makes the font look nice*/
   margin-bottom: 2em;
 }
 
@@ -110,7 +110,7 @@ button {
 }
 
 #error {
-  color: red;
+  color: red; /*bright to get the user's attention*/
   font-weight: 400;
 }
 
@@ -118,7 +118,7 @@ button {
   font-size: 1.4em;
   height: 1em;
   width: 1em;
-  display: grid;
+  display: grid; /*This helps when editing the height and width (makes it easier to move around the x icon)*/
   place-items: center;
   color: #694A43;
   border-radius: 50%;
@@ -152,7 +152,7 @@ textarea:focus {
 
 #save-btn {
   font-size: 1em;
-  background-color: #694A43;
+  background-color: #694A43; /*Dark button color like the text*/
   color: #ffffff;
   padding: 0.6em 0;
   border-radius: 0.3em;
@@ -165,6 +165,9 @@ textarea:focus {
   gap: 1.5em;
   grid-template-columns: 1fr 1fr 1fr;
 }
+
+/* Each card will display after the user makes it*/
+/*Each card has to have consistent styling*/
 
 .card {
   padding: 1.2em;
@@ -196,7 +199,7 @@ textarea:focus {
   display: block;
   background-color: #694A43; /* Updated color */
   color: #ffffff;
-  text-decoration: none;
+  text-decoration: none; /*No underlined text or anything of that sort*/
   text-align: center;
   padding: 0.6em 0;
   border-radius: 0.3em;
@@ -204,7 +207,7 @@ textarea:focus {
 
 .buttons-con {
   display: flex;
-  justify-content: flex-end;
+  justify-content: flex-end; /*content will move to the corner*/
 }
 
 .edit,
@@ -233,13 +236,15 @@ textarea:focus {
   }
 }
 
+/*Editing the screen so that everything fits well in the webpage*/
+
 @media screen and (max-width: 450px) {
   body {
     font-size: 14px;
   }
   .card-list-container {
     grid-template-columns: 1fr;
-    gap: 1.2em;
+    gap: 1.2em; /*Adding spacing between the cards*/
   }
 }
 

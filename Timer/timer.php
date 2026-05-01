@@ -8,11 +8,13 @@ if(isset ($_POST['studyTime']) && isset($_SESSION['userID'])){
     $userID = (int) $_SESSION['userID'];
     $hours = (float) $_POST['studyTime'];
 
+    //When user clicks stop, the study time will be updated through SQL
     $stmt = $conn -> prepare("
     UPDATE StudySpaceUserAccounts
     SET totalStudyHours = totalStudyHours + ?
     WHERE id = ?
     ");
+    //It wont replace, it will add the previous time with the new time
 
     $stmt->bind_param("di",$hours, $userID);
     $stmt->execute();
@@ -72,13 +74,15 @@ if(isset ($_POST['studyTime']) && isset($_SESSION['userID'])){
                     <!-- Brought from my stopwatch controls  -->
                     <div id="controls">
                         <button id="startBtn" onclick="start()">START</button>
-                        <button id="stopBtn" onclick="stop()">STOP</button>
+                        <!--- Added Stop/Save so that the user knows that once they stop their time, it'll save it, so it'll refresh the page  --->
+                        <button id="stopBtn" onclick="stop()">STOP/SAVE</button>
                     </div>
             </div>
         </div>
         <script src="index-timer.js"></script>
         <a id="backBTN" href="https://cs.colostate.edu:4444/~C836987719/StudySpace/homepage.php" class="goBack">Back</a>
 
+        <!-- This form will be updated everytime the user clicks on stop (which means the website will be refreshed everytime) --->
         <form id="timeForm" method="POST">
             <!--- Adding a hidden form that will save all of the time, and then send it to studyStats (to connect the number to the database successfully) --->
             <input type="hidden" name="studyTime" id="studyTimeInput">

@@ -1,11 +1,11 @@
 <?php
 //I will update this later with SQL to load/handle each user's saved information
 
-session_start();
+session_start(); //always starting the session in the beginning so that user can't go to websites without being logged in.
 //isset to check if the user is logged in
 
 if(!isset($_SESSION['userID'])){
-    //if they're not, user will be redirected to login.php
+    //if they're not signed in, user will be redirected to login.php
     header("Location: login.php");
     exit();
 }
@@ -41,8 +41,9 @@ $firstName = $_SESSION['firstName'];
                 </div>
             </div>
         </div>
-        <!-- Features Section (They'd still have to navigate to the navbar to click on where to go) -->
+        <!-- Features Section (This webpage is pretty much my navbar?) -->
         <div class="featuresSection">
+
             <div id="StudyTools">
                 <i class='bx bx-book-reader feature-icon'></i>
                 <h3>Study Tools</h3>
@@ -50,6 +51,7 @@ $firstName = $_SESSION['firstName'];
                 <br>
                 <a href="StudyTools/studyTools.php" class="goStudyTools">Go!</a>
             </div>
+
             <div id="studyGame">
                 <i class='bx bxs-chess feature-icon'></i>
                 <h3>Mind Games</h3>
@@ -57,6 +59,7 @@ $firstName = $_SESSION['firstName'];
                 <br>
                 <a href="Games/games.php" class="goGames">Go!</a>
             </div>
+
             <div id="stopwatch">
                 <i class='bx bx-stopwatch feature-icon'></i>
                 <h3>StopWatch</h3>
@@ -64,6 +67,7 @@ $firstName = $_SESSION['firstName'];
                 <br>
                 <a href="StopWatch/stopwatch.php" class="goStopWatch">Go!</a>
             </div>
+
             <div id="timer">
                 <i class='bx bx-timer feature-icon'></i>
                 <h3>Timer</h3>
@@ -71,6 +75,7 @@ $firstName = $_SESSION['firstName'];
                 <br>
                 <a href="Timer/timer.php" class="goTimer">Go!</a>
             </div>
+
             <div id="studyStats">
                 <i class='bx bx-bar-chart-alt-2 feature-icon'></i>
                 <h3>Study Statistics</h3>
@@ -78,6 +83,7 @@ $firstName = $_SESSION['firstName'];
                 <br>
                 <a  href="StudyStats/studystats.php" class="goStudyStats">Go!</a>
             </div>
+
             <div id="Profile">
                 <i class='bx bxs-user'></i>
                 <h3>Profile</h3>
@@ -85,6 +91,7 @@ $firstName = $_SESSION['firstName'];
                 <br>
                 <a href="Profile/profile.php" class="goProfile">Go!</a>
             </div>
+
         </div>
     </body>
 </html>

@@ -11,8 +11,8 @@ const closeBtn = document.getElementById("close-btn");
 
 //Initializing all of the variables
 let editBool = false;
-let originalID = null;
-let flashcards = JSON.parse(localStorage.getItem('flashcards')) || [];
+let originalID = null; //this will come in handy when editing later
+let flashcards = JSON.parse(localStorage.getItem('flashcards')) || []; //making an array of flashcards to save locally
 
 //how the user will add the questions
 
@@ -35,8 +35,8 @@ closeBtn.addEventListener("click", () =>{
 
 cardButton.addEventListener("click", () =>{
     //save the flashcard
-    let tempQuestion = question.value.trim();
-    let tempAnswer = answer.value.trim();
+    let tempQuestion = question.value.trim(); //trim user's input (no extra spaces)
+    let tempAnswer = answer.value.trim();//trim user's input (no extra spaces)
     if(!tempQuestion || !tempAnswer){
         //display the error message if a question or answer is empty
         errorMessage.classList.remove("hide");
@@ -53,6 +53,7 @@ cardButton.addEventListener("click", () =>{
 
         //save the flashcards array to local storage (MIGHT: change this later so that it saves all data into the database)
         localStorage.setItem('flashcards', JSON.stringify(flashcards));
+        //this is what pops up when add flashcard is made
         container.classList.remove("hide");
         errorMessage.classList.add("hide");
         viewList();
@@ -67,6 +68,7 @@ cardButton.addEventListener("click", () =>{
 //Now to display the whole flashcard list
 
 function viewList(){
+    //this is what will be displayed by default
     const listCard = document.querySelector(".card-list-container");
     listCard.innerHTML = '';
     flashcards = JSON.parse(localStorage.getItem('flashcards')) || [];
@@ -84,6 +86,7 @@ function viewList(){
         `;
         div.setAttribute('data-id', flashcard.id);
 
+        //getting all of the classes from my studyTools.php and assigning them into variables that I can use (rather than just saying them over and over again)
         const displayAnswer = div.querySelector(".answer-div");
         const showHideBtn =  div.querySelector(".show-hide-btn");
         const editButton = div.querySelector(".edit");
@@ -95,7 +98,7 @@ function viewList(){
         });
 
         editButton.addEventListener("click", () => {
-            //Allow user to edit and add a question card
+            //Allow user to edit and add a question card (once clicked)
             editBool = true;
             modifyElement(editButton, true);
             addQuestionCard.classList.remove("hide");
@@ -113,10 +116,12 @@ function viewList(){
 //Now to modify a flashcard element
 
 const modifyElement = (element, edit = false) => {
+
   const parentDiv = element.parentElement.parentElement;
   const id = Number(parentDiv.getAttribute('data-id'));
   const parentQuestion = parentDiv.querySelector(".question-div").innerText;
   if (edit) {
+    //if the user wants to edit the element
     const parentAns = parentDiv.querySelector(".answer-div").innerText;
     answer.value = parentAns;
     question.value = parentQuestion;
@@ -135,7 +140,7 @@ const modifyElement = (element, edit = false) => {
 const disableButtons = (value) => {
     const editButtons = document.getElementsByClassName("edit");
     Array.from(editButtons).forEach((element) => {
-        element.disabled = value;
+        element.disabled = value; //value becomes disabled
     });
 };
 

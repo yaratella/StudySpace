@@ -2,7 +2,7 @@
 
 //I will update this later with SQL to load/handle each user's saved information
 
-session_start();
+session_start(); //always making sure that the session has started
 //isset to check if the user is logged in
 
 if(!isset($_SESSION['userID'])){
@@ -56,7 +56,7 @@ if(!isset($_SESSION['userID'])){
         <!-- Close the Button -->
         <i class="fa-solid fa-xmark" id="close-btn"></i>
       </div>
-
+      <!--- flashcard question --->
       <label for="question">Question:</label>
       <textarea
         class="input"
@@ -64,6 +64,7 @@ if(!isset($_SESSION['userID'])){
         placeholder="Type the question here..."
         rows="2"
       ></textarea>
+       <!--- flashcard answer --->
       <label for="answer">Answer:</label>
       <textarea
         class="input"
@@ -71,10 +72,12 @@ if(!isset($_SESSION['userID'])){
         rows="4"
         placeholder="Type the answer here..."
       ></textarea>
+
+       <!--- button to save all of your answers--->
       <button id="save-btn">Save</button>
     </div>
 
-    <!-- Script -->
+    <!-- Script for everything that needs to be saved -->
     <script src="tools.js"></script>
   </body>
 </html>

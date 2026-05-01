@@ -33,6 +33,8 @@ body {
     padding-left: 160px; /*Added a bit of spacing, but im keeping the login things to the left*/
 }
 
+/*This will be transparent and the body will look similar to login.php*/
+/*Lots of featured copied over from my login.php*/
 .body{
     width: 100%;
     max-width: 900px;
@@ -62,6 +64,7 @@ body {
     color: white;
 }
 
+/*COntainer that holds all of the time and all of the different things that I want to add on there*/
 #statsContainer{
     margin-top: 50px;
     display: flex;

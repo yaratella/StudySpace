@@ -1,3 +1,5 @@
+//ALL OF THESE IDs came from my timer.php file (I defined them as variables so that they will update faster)
+
 const display = document.getElementById("display");
 const timerDropdown = document.getElementById("timerDropdown");
 const timerDisplay = document.getElementById("timerDisplay");
@@ -100,18 +102,21 @@ function updateDisplay(){
     minutes = String(minutes).padStart(2,"0");
     seconds = String(seconds).padStart(2,"0");
 
+    //<p> will display the time
     display.querySelector('p').textContent = `${hours}:${minutes}:${seconds}`;
 }
 
 //TESTING MY SAVE TIME FEATURE
 
 function saveTimerTime(){
+    //accurately updated the time calculation (so that it's not taking the time left, but taking hte time studied)
     let timeStudied = totalTime - timeLeft;
 
-    //Converting to hours (since DB stores hours)
+    //Converting to hours
     let hoursStudied = timeStudied / (1000 * 60 * 60);
 
     document.getElementById("studyTimeInput").value = hoursStudied;
 
-    document.getElementById("timeForm").submit();
+    //once the user clicks stop, it'll get the element by it's id and submit the form
+    document.getElementById("timeForm").submit(); //submitting the form will then refresh the page and update the datsabase
 }
