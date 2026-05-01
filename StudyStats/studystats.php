@@ -1,7 +1,10 @@
 <?php
 
+//Starting my session and making sure that the user is logged in so that they don't access the webpages without being logged in
+
 session_start();
 
+//starting the session to make sure the user is logged in.
 if(!isset($_SESSION['userID'])){
     //Redirect the user to login if they are not logged in yet
     header("Location: ../login.php");
@@ -17,15 +20,16 @@ $userID = (int) $_SESSION['userID'];
 //Getting the user's total study hours
 //Got this from my previous connection attempts (login.php)
 //Using my prepared statement to prevent attackers from getting in
-$stmt = $conn->prepare("SELECT totalStudyHours, firstName FROM StudySpaceUserAccounts WHERE id = ?");
+$stmt = $conn->prepare("SELECT totalStudyHours, firstName FROM StudySpaceUserAccounts WHERE id = ?"); //getting their first name and total study hours
 $stmt->bind_param("i", $userID);
 $stmt->execute();
 $result = $stmt->get_result();
 $userData = $result->fetch_assoc();
 
-$totalHours = $userData['totalStudyHours'];
-$firstName = $userData['firstName'];
+$totalHours = $userData['totalStudyHours']; //from the database
+$firstName = $userData['firstName']; //from the database
 
+//closing the statement and the connection
 $stmt->close();
 $conn->close();
 
@@ -48,6 +52,7 @@ $conn->close();
         <div class="body">
             <div id="header">
                 <h1>Study Statistics</h1>
+                <!-- Displaying the user's name -->
                 <p>Your study progress, <?= htmlspecialchars($firstName) ?></p>
             </div>
 
@@ -59,6 +64,7 @@ $conn->close();
                     <div class="stat-info-time">
                         <h3>Total Time</h3>
                         <p class="stat-value">
+                            <!--- Loading all of the stats values that were saved onto the database! --->
                             <?php
                             $totalSeconds = round($totalHours * 3600);
 
@@ -85,6 +91,7 @@ $conn->close();
                     <div class="stat-info">
                         <h3>Achievement</h3>
                         <p class="stat-value">
+                            <!-- Multiple if statement to check how long they've been studying and display a special acheivement for the user  -->
                             <?php
                             if($totalHours >= 1500) echo " The Ultimate Legend ";
                             elseif($totalHours >= 900) echo " Night Owl ";

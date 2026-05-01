@@ -6,6 +6,8 @@
 //Using .strip-cell class when clicked to removed the selected class then add the selected color to the selected, then change the actual defined variable
 
 
+//This was brought from my lab assignment 4
+
 
 $('.strip-cell').on('click', function(){
     $('.strip-cell').removeClass('selected');

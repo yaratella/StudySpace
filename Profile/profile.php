@@ -48,6 +48,7 @@ $conn->close();
         <link rel="stylesheet" href="styleProfile.css">
 
         <!-- Online Icon Linked (incase I need to use it again) -->
+         <!-- will need to use it for my profile icon (simialr to the username icon in my login) -->
         <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
     </head>
 
@@ -74,7 +75,8 @@ $conn->close();
                     </div>
                     <div class="info-item">
                         <label>Member:</label>
-                        <p>You're the <?= $userData['id'] ?> member on our platform!</p>
+                        <!--- Grammatically correct? --->
+                        <p>You're the <?= $userData['id'] ?> th member on our platform!</p>
                     </div>
                     <div class="info-item">
                         <label>Member Since:</label> 
@@ -86,6 +88,7 @@ $conn->close();
                 <div class="prof-actions">
                     <!-- Allow Users to go back to the homepage, and also adding a log out feature that will end the session!  -->
                      <a href="../homepage.php" class="btn-back">Back</a>
+                     <!-- logout will just redirect them back to the login page -->
                      <a href="../login.php?action=logout" class="btn-logout">Logout</a>
                 </div>
 </div>

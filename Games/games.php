@@ -3,7 +3,7 @@
 //I will update this later with SQL to load/handle each user's saved information
 
 session_start();
-//isset to check if the user is logged in
+//isset to check if the user is logged in (if not then they'll be redirected to log in again)
 
 if(!isset($_SESSION['userID'])){
     //if they're not, user will be redirected to login.php
@@ -12,6 +12,8 @@ if(!isset($_SESSION['userID'])){
 }
 
 ?>
+
+<!-- First game was made from Lab Assignment 4, second game, memory card game -->
 
 <!DOCTYPE html>
 <html lang="en">

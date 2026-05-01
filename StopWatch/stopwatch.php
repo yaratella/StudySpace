@@ -2,7 +2,14 @@
 
 session_start();
 
-include "../connect.php"
+include "../connect.php"; //connect to the database
+include "../password.php";
+
+//if they're not logged in then they can't access this page
+if(!isset($_SESSION['userID'])){
+    header("Location: ../login.php");
+    exit();
+}
 
 ?>
 
@@ -34,7 +41,7 @@ include "../connect.php"
 
             </div>
             <script src="index-stopwatch.js"></script>
-            <a href="https://cs.colostate.edu:4444/~C836987719/StudySpace/homepage.php" class="goBack">Back</a>
+            <a href="../homepage.php" class="goBack">Back</a>
         </div>
     </body>
 </html>

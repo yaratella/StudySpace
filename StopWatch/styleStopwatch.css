@@ -39,7 +39,7 @@ body {
     border: 1px solid #694A43; /*Makes a small border that blends smoothly with the background*/
     backdrop-filter: blur(20px); /*Makes the background that it's behind a bit blurrier*/
     box-shadow: 0 0 10px rgba(0, 0, 0,  0.2);
-    color: white;
+    color: white; /*Like previous styles all colors will be white to match the overall theme*/
     /*Making the login a little more squished, not spaced out*/
     border-radius: 10px;
     padding: 50px 50px;
@@ -54,7 +54,7 @@ body {
     text-align: center;
     font-weight: bold;
     color: #694A43;
-    background: white;
+    background: white; /*So that all other colors can popout!*/
     border-radius: 50px;
     margin-top: 40px;
     font-size: 2rem;;
@@ -89,6 +89,8 @@ body {
     background-color: #694A43;
 }
 
+/*Like timer, when you hover over the buttons, they will become darker*/
+
 #startBtn:hover{
     background-color:#507826; 
 }
@@ -107,7 +109,7 @@ a {
     margin-top: 25px;
     color: #2E1F1E;
     background: #C17B7B; /*Darker pink buttons*/
-    text-decoration: none;
+    text-decoration: none; /*No underline over the links (style becomes cleaner)*/
     border-radius: 40px;
     padding: 5px 10px;
 }

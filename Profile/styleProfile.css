@@ -54,7 +54,7 @@ body {
 
 .prof-icon {
     font-size: 80px;
-    color: white;
+    color: white; /*white to match the test*/
     display: block;
     margin-bottom: 15px;
 }

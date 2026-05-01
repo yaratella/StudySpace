@@ -1,5 +1,6 @@
 const display = document.getElementById("display");
 
+//All variable values identified and set to their default values here
 let timer = null;
 let startTime = 0;
 let elapsedTime = 0;
