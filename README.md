@@ -1,11 +1,10 @@
-# StudySpace
+### StudySpace
 
 <!-- Centered Header Image -->
-<p align="center">
-  <img src="images/homepage.png" alt="Project Homepage" width="600">
-</p>
+<img width="1469" height="725" alt="Login" src="https://github.com/user-attachments/assets/53d9c9b4-72ad-4dbf-b858-f378b455d60e" />
 
-## 🖥️ About the Project
+
+### About the Project
 For the personal project proposal, I would like to create a website called StudySpace. This website could potentially aid students (whether they’re in college or in highschool) with studying for their courses, looking at upcoming work (like upcoming due dates for assignments or exams, or upcoming goals that they would like to reach).
 
 Many students struggle with balancing both their academic time and personal time, and keeping their academic resources in one accessible place. They often either forget to study, forget certain resources they would’ve wanted to study with, or what they need is on different websites/apps.
@@ -33,7 +32,9 @@ And at the very top, I plan to add all of the time that they spent studying for 
 When they would like to access their resources, this will be implemented in the form of links, pdfs uploaded into the website, and even images (of their homework, or screenshots of websites that they found helpful for studying). 
 
 
-If users want to change their theme, I might try to implement a settings section (that will be available when they click on their username under the navigation bar) that will allow them to change the theme (likely titled Appearance) an About section (where they can get a guide for helpful information to guide them through the app) and a Privacy and Security Section (where they will be allowed to edit/see info like their birthday, name, and other things about them. I would want to have a section where they could edit/see their password, but for the sake of security I feel like that would be difficult to implement, since most websites have sent you emails with instructions on how to reset your password.
+If users want to change their theme, I might try to implement a settings section (that will be available when they click on their username under the navigation bar) that will allow them to change the theme (likely titled Appearance) an About section (where they can get a guide for helpful information to guide them through the app) and a Privacy and Security Section (where they will be allowed to edit/see info like their birthday, name, and other things about them.
+
+I would want to have a section where they could edit/see their password, but for the sake of security I feel like that would be difficult to implement, since most websites have sent you emails with instructions on how to reset your password.
 
 
 I believe with this website, several students (including me) could use it to track exam deadlines, how much they’ve studied for each course (and each exam) and allow them to further improve the system/way that they use to study for their assignments and exams.  This is important to explore since it can help students focus and study for their exams. 
@@ -44,13 +45,38 @@ This project addresses a common problem in web applications. The need for a simp
 
 Rather than having to either pay to use a website, or having to use several different websites and having a cluttered space, students can just use StudySpace and have everything that they need organized.
 
-## 📸 Screenshots
-<p align="center">
-  <img src="https://path-to-your-screenshot.png" alt="Webpage Screenshot-1" width="400">
-  <img src="https://path-to-your-screenshot.png" alt="Webpage Screenshot-2" width="400">
-  <img src="https://path-to-your-screenshot.png" alt="Webpage Screenshot-3" width="400">
-  <img src="https://path-to-your-screenshot.png" alt="Webpage Screenshot-4" width="400">
-</p>
+### Screenshots
 
-## Features
-- **Feature A**: Personal User Account
+<img width="1469" height="725" alt="Homepage" src="https://github.com/user-attachments/assets/59eb004f-e230-494e-9605-3e3f14f098fa" />
+
+<br>
+
+<img width="1469" height="725" alt="StudyStats" src="https://github.com/user-attachments/assets/20392813-9962-4017-9ffc-a75eb53a22e4" />
+
+<br
+
+https://github.com/user-attachments/assets/d677177e-e042-4214-839f-7ea9a500a234
+
+>
+
+<img width="1469" height="725" alt="Profile" src="https://github.com/user-attachments/assets/3285c6fa-8a4d-4fb3-a5d2-8289509760a3" />
+
+
+### Features
+- Personal user account
+- Personalized study time tracker per user
+- Personalized user achievements
+- Personalized editable locally saved flashcards
+
+### Future To-Do Features
+- Implement a forgot password feature
+- make the design similar across webpages
+- dynamically load all webpages onto one webpage
+
+### Video Demo
+
+
+
+https://github.com/user-attachments/assets/6bc7ed27-581d-4ba5-a7ee-2d323e7c7221
+
+
